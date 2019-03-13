@@ -1,0 +1,262 @@
+		html,body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		overflow: hidden;
+    	}
+    	.swiper-slide{
+    		width: 100%;
+    		height: 100%;
+    		background-color: #FFF0DB;
+    	}
+    	.bottom_img_area img{
+    		position: absolute;
+    		z-index: 10;
+    	}
+    	.page_title{
+    		width: fit-content;
+		    height: fit-content;
+		    text-align: center;
+		    background-image: url(../img/tips.jpg);
+		    background-repeat: no-repeat;
+		    background-size: 100%;
+		    padding: 0 20px;
+		    padding-top: 27px;
+		    margin: auto;
+		    margin-bottom: 0.5rem;
+    	}
+    	.page_title h2{
+    		color: #F1B865;
+    	}
+    	.multi_text{
+    		width: 80%;
+    		text-align: left;
+    		margin: auto;
+    		text-indent: 2em;
+    		line-height: 1.2rem;
+    		font-size: 0.9rem;
+    	}
+    	.mask{
+    		width: 40rem;
+    		height: 40rem;
+    		border-radius: 50%;
+    		position: absolute;
+    		bottom: -30rem;
+    	}
+    	.text_area h3{
+    		margin-top: 0;
+    		margin-bottom: 1rem;
+    	}
+    	/*
+    	 * 加入我们样式
+    	 */
+    	.logo_img{
+    		width: 60%;
+    		margin: 2rem auto;
+    	}
+    	.logo_img img{
+    		width: 100%;
+    	}
+    	.text_area{
+    		width: 100%;
+    		text-align: center;
+    		color: #7d7d7d;
+    		position: absolute;
+    		z-index: 11;
+    	}
+    	#grear{
+    		width: 6rem;
+    		right: 5%;
+    		bottom: 5%;
+    		
+    	}
+    	#img_05{
+    		width: 4rem;
+    		left: 5%;
+    		bottom: 15%;
+    	}
+    	#mask_01{
+    		background-color: rgba(205, 133, 63, 0.5);
+    	}
+    	#jion_us{
+    		width: 50%;
+    		left: 15%;
+			bottom: 10%;    	
+		}
+		/*
+		 * 公司简介样式
+		 */
+		#img_04{
+			width: 40%;
+			bottom: 3%;
+			right: 3%;
+		}
+		#mask_02{
+			background-color: rgba(147, 112, 219, 0.5);
+		}
+		/*
+		 * 公司产品介绍样式
+		 */
+		#img_01{
+			width: 20%;
+			bottom: 3%;
+			right: 3%;
+		}
+		/*
+		 * 公司历程样式
+		 */
+		#timeline{
+			width: 6rem;
+			right: 5%;
+			bottom: 3%;
+		}
+		.times {
+			display:block;
+		}/*首先，我们要创建一个容器class*/
+		.times ul {
+			margin-left:25px;
+			border-left:2px solid #ddd;
+			padding: 0;
+		}/*利用ul标签的特性，设置外边框左移25px，左边边框是2px粗的实心线，颜色一般要浅一点*/
+		.times ul li {
+			width:100%;
+			margin-left:-12px;
+			line-height:20px;
+			font-weight:narmal;
+			list-style-type: none;
+		}/*一般情况，通过li标签控制圆点回到时间线上，然后控制要出现的文字大小和是否粗体*/
+		.times ul li h3{
+			width:8px;
+			height:8px;
+			background:#fff;
+			border:2px solid #555;
+			margin:5px;
+			border-radius:6px;
+			-webkit-border-radius:6px;
+			-moz-border-radius:6px;
+			overflow:hidden;
+			display:inline-block;
+			float:left;
+		}/*利用处理加粗以外没有其它特别属性b标签做时间轴的圆点。*/
+		.times ul li span {
+			padding-left:7px;
+			font-size:0.8rem;
+			line-height:20px;
+			color:#555;
+			text-align: center;
+		}/*设置span标签的属性，让它来做时间显示，加一点边距，使时间显示离时间线远一点*/
+		.times ul li:hover b {
+			border:2px solid #ff6600;
+		}/*注意这一行，前面的li标签后面加了一个:hover伪属性，意思是鼠标移上来，激活后面的属性，这样可以设置鼠标移动到整个时间范围的时候，时间点和时间显示会变色*/
+		.times ul li:hover span {
+			color:#ff6600;
+		}/*同上*/
+		.times ul li p {
+			padding-left:15px;
+			font-size:14px;
+			line-height:25px;
+		}/*这里利用段落标签p做文字介绍*/
+		.times div{
+			margin-left: 20px;
+		}
+		.info_area{
+			width: 80%;
+		}
+		.info_area p{
+			margin: 0;
+		}
+		#mask_03{
+			background-color: rgba(51, 102, 204, 0.5);
+		}
+		/*
+		 * 公司环境样式
+		 */
+		#envir_01{
+			width: 35%;
+		    top: 20%;
+		    left: 5%;
+		}
+		#envir_02{
+			width: 50%;
+		    top: 23%;
+		    left: 45%;
+		}
+		#envir_04{
+			width: 50%;
+		    top: 50%;
+		    left: 5%;
+		}
+		#envir_03{
+			width: 35%;
+		    top: 47%;
+		    left: 60%;
+		}
+		#img_02{
+			width: 15%;
+			right: 28%;
+			bottom: 3%;
+		}
+		#img_03{
+			width: 25%;
+			right: 5%;
+			bottom: 6%;
+		}
+		#mask_04{
+			background-color: rgba(204, 0, 0, 0.5);
+		}
+		/*
+		 * 公司福利样式
+		 */
+		.text_area table{
+		 	width: 90%;
+		 	margin: auto;
+		 	font-weight: 800;
+		}
+		.text_area table td{
+		 	width: 50%;
+		 	text-align: center;
+		 	padding: 15px 0;
+		}
+		.different_td{
+			background-color: #cc6633;
+			color: #fff; 	
+		}
+		#img_08{
+			width: 45%;
+		    right: 5%;
+		    bottom: 3%;
+		}
+		#mask_05{
+			background-color: rgba(0, 153, 102, 0.5);
+		}
+		/*
+		 * 招聘岗位类型样式
+		 */
+		.type_btn{
+			width: 80%;
+			margin-left: 10%;
+			border: 0;
+			padding: 20px 0;
+			margin: 10px 0;
+			font-weight: 800;
+			color: #fff;
+			font-size: 18px;
+			border-radius: 5px;
+		}
+		#synt_btn{
+			background-color: #009966;
+		}
+		#oper_btn{
+			background-color: #ff6633;
+		}
+		#tech_btn{
+			background-color: #0066cc;
+		}
+		#market_btn{
+			background-color: #836FFF;
+		}
+		#img_06{
+			width: 50%;
+			right: 0;
+			bottom: 0;
+		}

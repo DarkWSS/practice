@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				overflow-x: hidden;
+				background-color: #FFF0DB;
+			}
+			.main{
+				padding: 1px 20px;
+				color: #545454;
+			}
+			.main h2{
+				text-align: center;
+				margin: 2rem auto;
+				margin-bottom: 0.5rem;
+			}
+			.main h4{
+				text-align: center;
+				margin-top: 5px;
+			}
+			.main p{
+				padding: 0 1rem;
+				margin: 0.5rem 0;
+			}
+			.we_need{
+				width: 80%;
+				margin: auto;
+			}
+			.we_need img{
+				width: 100%;
+				margin-top: 1rem;
+			}
+			#info h3{
+				text-align: center;
+			}
+			.society_info_area{
+				background-color: #fff;
+				padding: 1px 0;
+				border-radius: 10px;
+				box-shadow: 10px 10px 6px #888888;
+				margin-bottom: 30px;
+				padding-bottom: 1rem;
+			}
+			#place{
+				text-align: center;
+				background-image: url(img/img_14.jpg);
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<h2 id="post"></h2>
+			<h4 id="post_info"></h4>
+			<div id="info">
+				<div id="station" class="society_info_area">
+					<h3>↬&nbsp;&nbsp;岗位职责&nbsp;&nbsp;↫</h3>
+				</div>
+				
+				<div id="service" class="society_info_area">
+					<h3>↬&nbsp;&nbsp;任职要求&nbsp;&nbsp;↫</h3>
+				</div>
+				<div id="place">
+					<p>请将简历投递至：zhoulihong@godincloud.com</p>
+					<p>HR微信：13646848404</p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			//截取url获取参数
+			(function ($) {
+                $.getUrlParam = function (name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                }
+            })(jQuery);
+            $.getJSON('data/'+$.getUrlParam('type')+'.json',function(data){
+            	$.each(data, function(i) {
+            		if(data[i].id==$.getUrlParam('id')){
+            			$('#post').html(data[i].post.split('（')[0]);
+            			$('#post_info').html(data[i].post.split('（')[1].substring(0,data[i].post.split('（')[1].length-1));
+            			$('#station').append(formatString(data[i].station));
+            			$('#service').append(formatString(data[i].service));
+            		}
+            	});
+            })
+            function formatString(str){
+            	let html = '';
+            	var strArr = str.split('；');
+            	$.each(strArr, function(i) {
+            		html += '<p>'+(i+1)+' . '+strArr[i]+'</p>';
+            	});
+            	return html;
+            }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				overflow-x: hidden;
+				background-color: #FFF0DB;
+			}
+			.main{
+				width: 90%;
+				height: 90%;
+				margin: 7.5% 5%;
+				padding: 1px;
+			}
+			.we_need{
+				width: 80%;
+				margin: auto;
+			}
+			.we_need img{
+				width: 100%;
+			}
+			#list p{
+				text-align: center;
+				color: #fff;
+				padding: 10px;
+				margin: 20px 0;
+				box-shadow: 10px 10px 6px #888;
+				border-radius: 5px;
+				font-weight: 800;
+			}
+			.color_00{
+				background-color: #339966;
+			}
+			.color_01{
+				background-color: #ff6600;
+			}
+			.color_02{
+				background-color: #669933;
+			}
+			.color_03{
+				background-color: #9966cc;
+			}
+			.color_04{
+				background-color: #990033;
+			}
+			.color_05{
+				background-color: #6699cc;
+			}
+			.color_06{
+				background-color: #006666;
+			}
+			.bottom_img_area{
+    			margin-bottom: 1.5rem;
+			}
+			.bottom_img_area p{
+				width: 80%;
+				margin-left: 10%;
+				text-align: center;
+				color: #525252;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="we_need">
+				<img src="img/we_need.jpg"/>
+			</div>
+			<div id="list"></div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			//截取url获取参数
+			(function ($) {
+                $.getUrlParam = function (name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                }
+            })(jQuery);
+            $.getJSON('data/'+$.getUrlParam('type')+'.json',function(data){
+            	$.each(data, function(i) {
+            		$('#list').html($('#list').html()+'<p class="color_0'+i+'" onclick="skipToPostInfo('+data[i].id+')">'+data[i].post+'</p>');
+            	});
+            })
+            //跳转到职位详情页
+            function skipToPostInfo(id){
+            	const type = $.getUrlParam('type');
+            	window.location.href = 'society_info.html?type='+type+'&id='+id;
+            }
+            
+            pushHistory();
+            window.addEventListener("popstate",function(){
+                window.location.href = 'index.html?index=3';
+       		},false);
+       		
+       		function pushHistory() { 
+				var state = { 
+					title: "title", 
+					url: "#"
+				}; 
+				window.history.pushState(state, "title", "#");
+			}
+
+		</script>
+	</body>
+</html>
