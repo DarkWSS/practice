@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="animated slideInDown menu">
+				<div class="menu_title">
+					<table>
+						<tr>
+							<td class="choose_td">HOME</td>
+							<td>TRAVEL</td>
+							<td>ABOUT</td>
+						</tr>
+					</table>
+				</div>
+				<div class="menu_area">
+					<img class="head_img" src="img/head.jpg"/>
+				</div>
+				<div class="menu_list">
+					<div class="menu_list_area">
+						<div class="menu_list_div">HISTORY</div>
+						<div class="menu_list_div">SETTING</div>
+						<div class="menu_list_div">LOGIN OUT</div>
+					</div>
+				</div>
+			</div>
+			<div class="frame_area">
+				<iframe src="home.html"></iframe>
+				<iframe src="travel.html"></iframe>
+				<iframe src="about.html"></iframe>
+			</div>
+		</div>	
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			const urlArr = ["home.html", "travel.html", "about.html"];
+			$(document).ready(function () {
+				$(".choose_td").click();
+			})
+			$(".head_img").click(function(){
+				$(".menu_list").slideToggle(500);
+			})
+			$(".menu_list").mouseleave(function(){
+				$(".menu_list").slideUp(500);
+			})
+			$(".menu_title td").click(function () {
+				const index = $(".menu_title td").index($(this));
+				$.each($(".menu_title td"), function(i) {
+					$(".menu_title td").eq(i).removeClass("choose_td");
+				});
+				$(".menu_title td").eq(index).addClass("choose_td");
+				$(".frame_area").animate({"margin-left": -index + "00%"});
+				$("iframe").eq(index).attr("src", urlArr[index]);
+			})
+			$(".menu_list_div").eq(0).click(function () {
+				window.location.href = "history.html";
+			})
+			$(".menu_list_div").eq(1).click(function () {
+				window.location.href = "setting.html";
+			})
+			$(".menu_list_div").eq(2).click(function () {
+				window.location.href = "login.html";
+			})
+		</script>
+	</body>
+</html>

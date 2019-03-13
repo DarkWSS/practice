@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="house" width="1000" height="800"></canvas>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			$(document).ready(() => {
+				$("#house").width("100%");
+				$("#house").height("100%");
+				let can = $("#house")[0].getContext("2d");
+				can.moveTo(250, 100);
+				can.lineTo(750, 100);
+				can.lineTo(900, 150);
+				can.lineTo(100, 150);
+				can.lineTo(250, 100);
+				can.stroke();
+				can.moveTo(250, 200);
+				can.rect(200, 150, 600, 300);
+				can.stroke();
+			})
+		</script>
+	</body>
+</html>

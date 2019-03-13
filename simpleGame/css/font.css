@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "HURTM";
+  src: url("../font/HURTM.woff2") format("woff2"),
+       url("../font/HURTM.woff") format("woff"),
+       url("../font/HURTM.eot") format("embedded-opentype"),
+       url("../font/HURTM.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlgerianBasDEE";
+  src: url("../font/AlgerianBasDEE.woff2") format("woff2"),
+       url("../font/AlgerianBasDEE.woff") format("woff"),
+       url("../font/AlgerianBasDEE.eot") format("embedded-opentype"),
+       url("../font/AlgerianBasDEE.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "oldStamper";
+  src: url("../font/oldStamper.woff2") format("woff2"),
+       url("../font/oldStamper.woff") format("woff"),
+       url("../font/oldStamper.eot") format("embedded-opentype"),
+       url("../font/oldStamper.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anklada";
+  src: url("../font/Anklada_Novaz_regular.woff2") format("woff2"),
+       url("../font/Anklada_Novaz_regular.woff") format("woff"),
+       url("../font/Anklada_Novaz_regular.eot") format("embedded-opentype"),
+       url("../font/Anklada_Novaz_regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkerFeltWide Regular";
+  src: url("../font/MarkerFeltWide Regular.woff2") format("woff2"),
+       url("../font/MarkerFeltWide Regular.woff") format("woff"),
+       url("../font/MarkerFeltWide Regular.eot") format("embedded-opentype"),
+       url("../font/MarkerFeltWide Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="part" id="part00">
+				<div class="intro">
+					<div class="intro_area">
+						<h1><span class="animated slideInLeft bring">Bring </span>
+							<span class="animated slideInDown you">You </span>
+							<span class="animated slideInUp a">A </span>
+							<span class="animated jackInbox most">Most </span>
+							<span class="animated slideInRight beautiful">Beautiful </span>
+							<span class="animated rollIn journey">Journey</span>
+						</h1>
+						<button class="animated slideInUp learn_btn">Learn More</button>
+					</div>
+				</div>
+			</div>
+			<div class="part" id="part01">
+				<div class="part_msg">
+					<div>
+						<div class="part_title_area">
+							<h1>Niagara Falls</h1>
+							<h3>The most beautiful waterfall in the world</h3>
+						</div>
+						<div class="part_info_area">
+							<p>Niagara Falls is located at the border of Ontario, Canada and New York state of the United States. Niagara Falls is the source of the Niagara river.In the United States, the falls are separated by the moon island.At the same time, the waterfall is the world's largest transnational waterfall.</p>
+							<p>Niagara river downstream of the flow of water down the cliff to meet again, in less than 2 km long river under the precariousness at a speed of 35.4 kilometers per hour and 15.8 m drop, deduce one of the world's wild whirlpool rapids, after the left bank of Canada of queens, and the right bank of the United States Galveston, through "the devil hole jet", along the "the Galveston tributary valley" from west to east into the lake Ontario.</p>
+						</div>
+					</div>
+				</div>
+				<div class="part_info">
+					<img src="img/index_bck1.jpg" />
+				</div>
+			</div>
+			<div class="part" id="part02">
+				<div class="part_info">
+					<img src="img/index_bck2.jpg"/>
+				</div>
+				<div class="part_msg">
+					<div>
+						<div class="part_title_area">
+							<h1>Sanya Hainan</h1>
+							<h3>An extremely beautiful coastal city</h3>
+						</div>
+						<div class="part_info_area">
+							<p>Sanya city, also known as lucheng, is also known as the "Oriental Hawaii", ranking first among China's four first-tier tourist cities "sanwei hangzhou mansion", with the island's most beautiful coastal scenery.Sanya city is adjacent to lingshui county in the east, ledong county in the west, peibaoting county in the north, and the south China sea.The total land area is 1919.58km squared, and the total sea area is 6000km squared, of which the planned urban area is about 37 square kilometers.It is 91.6 km long from the east to the west and 51 km wide from the south to the north, with a permanent resident population of 741,800.Sanya is the central city and transportation and communication hub of southern hainan province. It is also one of the most important ports of foreign trade in the southernmost part of China's golden coastline opened to the outside world. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<audio src="media/audio/Elsa Kopf - IF.mp3" autoplay="autoplay"></audio>-->
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			let anchorIndex = 0;
+			$("body").scroll(function(){
+				const top = $("body").scrollTop();
+				const height = $(window).height();
+				const index = Math.round(top/height);
+				$("body::-webkit-scrollbar").css("display","block");
+				if (anchorIndex !== index) {
+					anchorIndex = index;
+					$("body").animate({scrollTop: index*height}, 500, function(){
+						if (index > 0) {
+							$(".part_title_area").eq(index-1).show();
+							$(".part_info_area").eq(index-1).show();
+							$(".part_info").eq(index-1).children($("img")).show();
+							$(".part_title_area").eq(index-1).addClass("animated slideInLeft");
+							$(".part_info_area").eq(index-1).addClass("animated slideInRight");
+							$(".part_info").eq(index-1).children($("img")).addClass("animated bounceInDown");
+						}
+					});
+				}
+			})
+			$(".learn_btn").click(function(){
+				const height = $(window).height();
+				$("body").animate({scrollTop: height}, 500);
+			})
+			$(".part_info img").click(function(){
+				let pic_url = $(this).attr("src");
+				const pic = {url: pic_url, type: "test"};
+				console.log(JSON.stringify(pic));
+			})
+		</script>
+	</body>
+</html>

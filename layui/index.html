@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>后台管理模板</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+  
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+	<div id="main">
+		<div id="main_left">
+			<ul class="layui-nav layui-nav-tree layui-bg-cyan layui-inline" lay-filter="demo">
+				<div class="empty_area"></div>
+			  <li class="layui-nav-item layui-nav-itemed">
+			    <a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>挂网产品管理</a>
+ 
+			    <dl class="layui-nav-child">
+			      <dd class="second_menu"><a href="javascript:;">挂网产品列表</a></dd>
+			      <dd class="second_menu"><a href="javascript:;">分类设置</a></dd>
+			    </dl>
+			  </li>
+			  <li class="layui-nav-item">
+			    <a href="javascript:;"><i class="layui-icon layui-icon-username"></i>设置签约代理商</a>
+			    <dl class="layui-nav-child">
+			      <dd class="second_menu"><a href="javascript:;">签约代理商列表</a></dd>
+			    </dl>
+			  </li>
+			  <li class="layui-nav-item">
+			    <a href="javascript:;"><i class="layui-icon layui-icon-form"></i>订单管理</a>
+			    <dl class="layui-nav-child">
+			      <dd class="second_menu"><a href="javascript:;">订单列表</a></dd>
+			      <dd class="second_menu"><a href="javascript:;">订单退货记录</a></dd>
+			    </dl>
+			  </li>
+			  <li class="layui-nav-item">
+			    <a href="javascript:;"><i class="layui-icon layui-icon-rmb"></i>财务管理</a>
+			    <dl class="layui-nav-child">
+			      <dd class="second_menu"><a href="javascript:;">提现申请</a></dd>
+			    </dl>
+			  </li>
+			</ul>
+		</div>
+		<div id="main_right">
+			<div class="layui-tab" lay-filter="demo" lay-allowclose="true">
+			  <ul class="layui-tab-title">
+			    <li class="layui-this" lay-id="11">主页</li>
+			  </ul>
+			  <div class="layui-tab-content">
+			    <div class="layui-tab-item layui-show">
+			    	<h3 style="text-align: center;">欢迎使用LAYUI模板</h3>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>    
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script src="layui/layui.all.js" charset="utf-8"></script>
+<script>
+	const pageArr = [{'title':'分类设置',"src":'classify.html'},{'title':'挂网产品列表',"src":'table.html'}, {'title': '签约代理商列表','src': 'tableTest.html'}];
+	//jquery相关代码操作
+	jQuery(function(){
+		$(document).ready(function(){
+			//设置页面样式
+			$(".layui-tab-content").height($("#main_right").height()-$(".layui-tab-title").height()-20);
+			$(".layui-tab-close").eq(0).hide();
+		})
+	})
+	//layui弹窗
+	layui.use(['layer', 'form'], function(){
+	  var layer = layui.layer,
+	  form = layui.form;
+	  
+	  $("#alert").click(function(){
+	  	layer.msg('Hello World');
+	  })
+	  
+	});
+	//layui操作元素
+	layui.use('element', function(){
+	  	const element = layui.element;
+	  	let url = "";
+	  	
+	  	$(".second_menu").click(function(){
+	  		
+	  		for (var i = 0; i < pageArr.length; i++) {
+	  			
+	  			if(pageArr[i].title == $(this).text()){
+	  				url = pageArr[i].src;
+	  			}
+	  			
+	  		}
+	  		
+	  		const layid = ($(".second_menu").index($(this))+1)*5;
+	  		const hasTab = $("li[lay-id="+layid+"]").length>0;
+	  		
+				if(!hasTab){
+					element.tabAdd('demo', {
+						title: $(this).text(),
+				    content: '<iframe src="'+url+'" frameborder="0" width="100%"></iframe>', //支持传入html
+				    id: layid,
+					}); 
+				}
+				
+				element.tabChange('demo',layid);
+	  	})
+	  	
+	});
+</script>
+
+</body>
+</html>

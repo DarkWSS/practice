@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/history.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="history_count">
+				<h1>So far</h1>
+				<h1>You've traveled</h1>
+				<div class="history_count_data">
+					<div class="data_div">
+						<h2 class="kilometers"></h2>
+						<h3>KILOMENTERS</h3>
+					</div>
+					<div class="data_div">
+						<h2 class="day"></h2>
+						<h3>DAYS</h3>
+					</div>
+					<div class="data_div">
+						<h2 class="countries"></h2>
+						<h3>COUNTRIES</h3>
+					</div>
+					<div class="data_div">
+						<h2 class="cities"></h2>
+						<h3>CITIES</h3>
+					</div>
+				</div>
+			</div>
+			<div class="history">
+				<div class="history_area">
+					<div class="history_area_title">2018</div>
+					<div class="history_area_div">
+						<div class="history_card">
+							<div class="card_title">Shanghai.China</div>
+							<div class="card_time">2018-01-01 ~ 2018-01-05</div>
+							<div class="card_remark">
+								<p>
+									I really enjoyed my stay in Shanghai these days.Shanghai is a very beautiful and dynamic city. Whether it is the bustling nanjing road pedestrian street or the iconic Oriental pearl tower, there is a sense of vitality everywhere.
+								</p>
+							</div>
+							<div class="card_btn">
+								<button>more</button>
+							</div>
+						</div>
+						<div class="history_card">
+							<div class="card_title">Maldives</div>
+							<div class="card_time">2018-06-14 ~ 2018-06-21</div>
+							<div class="card_remark">
+								<p>No record yet. Click this <a href="###">record</a></p>
+							</div>
+							<div class="card_btn">
+								<button>more</button>
+							</div>
+						</div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+						<div class="history_card"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				numberAnimate(".kilometers", 15986);
+				numberAnimate(".day", 84);
+				numberAnimate(".countries", 3);
+				numberAnimate(".cities", 27);
+				$(".history_count h1").eq(0).html(fontColor("So far"));
+				$(".history_count h1").eq(1).html(fontColor("You've traveled"));
+			})
+			let numberAnimate = (elem, count) => {
+				let num = 0;
+				const addNum = count/200;
+				setInterval(() => {
+					$(elem).text(numberFormat(parseInt(num)));
+					num += addNum;
+					if (num>=count) {
+						$(elem).text(numberFormat(parseInt(count)));
+						return false;
+					}
+				},10);
+			}
+			
+			let numberFormat = num => {
+				const str = num.toString().split("").reverse();
+				let numToStr = [];
+				$.each(str, i => {
+					if (i % 3 == 2 && i > 0 && i < str.length - 1) {
+						numToStr.push("," + str[i]);
+					} else {
+						numToStr.push(str[i]);
+					}
+				})
+				return numToStr.reverse().join("");
+			}
+			
+			let fontColor = str => {
+				const strArr = str.split("");
+				let strHtml = "";
+				$.each(strArr, i => {
+					const color = parseInt(Math.random()*255) + ", " + parseInt(Math.random()*255) + ", " + parseInt(Math.random()*255);
+					strHtml += strArr[i] === "" ? "" : `<span style='color: rgb(${color})'>${strArr[i]}</span>`;
+				});
+				return strHtml;
+			}
+		</script>
+	</body>
+</html>

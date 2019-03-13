@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="animated zoomInDown logo_img"><img src="img/logo.png"/></div>
+			<div class="login_area">
+				<hr class="hr_left">
+				<input class="animated fadeInDown" type="text" placeholder="Please enter your account number here" />
+				<input class="animated fadeInUp" type="password" placeholder="Please enter your password here" />
+				<hr class="hr_right">
+				<button class="animated zoomIn login_btn">Login</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			$(".login_btn").click(function(){
+				window.location.href = "index.html";
+			})
+			$(document).ready(() => {
+				console.log($(".hr_left").parent());
+			})
+		</script>
+	</body>
+</html>

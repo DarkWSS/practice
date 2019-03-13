@@ -1,0 +1,160 @@
+@import url("common.css");
+.part{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	display: flex;
+}
+.anchor{
+	display: none;
+}
+.part_msg{
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.part_title_area{
+	width: 100%;
+	display: none;
+}
+.part_title_area h1{
+	width: 80%;
+	text-align: center;
+	margin: auto;
+	font-size: 32px;
+	font-family: Stencil;
+}
+.part_title_area h3{
+	width: 80%;
+	text-align: right;
+	margin: auto;
+	font-size: 12px;
+	color: #474747;
+	font-family: verdana;
+}
+.part_info_area{
+	width: 100%;
+	display: none;
+}
+.part_info_area p{
+	width: 80%;
+	line-height: 25px;
+	text-indent: 2em;
+	margin: 0.5rem auto;
+	font-size: 1rem;
+	font-family: tempus sans ITC;
+}
+.part_info{
+	width: 60%;
+	height: 100%;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.part_info img{
+	width: 100%;
+	display: none;
+}
+.intro{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(138, 138, 138, 0.5);
+}
+.intro_area{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-size: 1.2rem;
+	font-family: snap ITC;
+}
+.intro_area span{
+	display: inline-block;
+}
+.bring{
+	color: rgba(13, 51, 73, 1);
+	transition: color 0.5s;
+}
+.bring:hover{
+	color: #3399cc;
+}
+.you{
+	color: rgba(220, 50, 47, 1);
+	transition: color 0.5s;
+	animation: fontShow 1s;
+}
+.you:hover{
+	color: #551A8B;
+}
+.a{
+	color: rgba(238, 87, 87, 1);
+	transition: color 0.5s;
+	animation: fontShow 1s;
+	animation-delay: 0.5s;
+}
+.a:hover{
+	color: #71C671;
+}
+.most{
+	color: rgba(221, 17, 68, 1);
+	transition: color 0.5s;
+	animation: fontShow 1s;
+	animation-delay: 0.75s;
+}
+.most:hover{
+	color: #4A4A4A;
+}
+.beautiful{
+	color: rgba(255, 102, 0, 1);
+	transition: color 0.5s;
+	animation: fontShow 1s;
+	animation-delay: 1s;
+}
+.beautiful:hover{
+	color: #00BFFF;
+}
+.journey{
+	color: rgba(153, 255, 102, 1);
+	transition: color 0.5s;
+	animation: fontShow 1s;
+	animation-delay: 1.25s;
+}
+.journey:hover{
+	color: #B03060;
+}
+.learn_btn{
+	border: 0;
+	border-radius: 25px;
+	padding: 10px 40px;
+	margin: 30px auto;
+	background-color: rgba(31, 31, 31, 0.5);
+	color: #FFFFFF;
+	transition: all 1s ease;
+	outline: none;
+	font-weight: 800;
+}
+.learn_btn:hover{
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #1A1A1A;
+}
+#part00{
+	background-image: url(../img/earth_map.jpg);
+}
+#part01{
+	background-color: #B4EEB4;
+}
+#part02{
+	background-color: #D1EEEE;
+}
+
+@keyframes fontShow{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}

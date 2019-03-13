@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+		<style>
+			html,body{
+				width: 100%;
+				/*height: 100%;*/
+				margin: 0;
+				background-color: #fff;
+			}
+			html{
+				margin: 10px;
+			}
+			body{
+				/*margin: 10px;*/
+				overflow-x: hidden;
+			}
+			
+			.classify_title{
+				padding: 10px 0;	
+			}
+			
+			.layui-collapse{
+				width: 99%;
+			}
+			
+			
+			.layui-collapse button,.classify_title button{
+				border: 0;
+				padding: 0 15px;
+				background-color: rgba(0,0,0,0);
+			}
+			.layui-colla-content span{
+				padding-left: 3%;
+			}
+			
+			.control_area{
+				float: right;
+			}
+			.add_btn{
+				color: #04BD98;
+			}
+			.edit_btn{
+				color: #1E9FFF;
+			}
+			.del_btn{
+				color: #FF5822;
+			}
+			
+			.input_form{
+				width: 350px;
+				padding: 20px 0;
+			}
+			.input_form form{
+				width: 80%;
+				display: flex;
+				margin: auto;
+			}
+			.input_form input{
+				margin-right: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3 class="classify_title">分类管理<button class="add_btn">添加一级分类</button></h3>
+		<div class="layui-collapse" lay-filter="test">
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">
+		    	<span>中药</span>
+		    	<div class="control_area">
+		    		<button class="add_btn">添加子类</button>
+		    		<button class="edit_btn">编辑</button>
+		    		<button class="del_btn">删除</button>
+		    	</div>
+		    </h2>
+		    <div class="layui-colla-content">
+		      <span>中成药</span>
+		      <div class="control_area">
+			      <button class="edit_btn">编辑</button>
+			      <button class="del_btn">删除</button>
+		      </div>
+		    </div>
+		    <div class="layui-colla-content">
+		      <span>制剂</span>
+		      <div class="control_area">
+			      <button class="edit_btn">编辑</button>
+			      <button class="del_btn">删除</button>
+			  </div>
+		    </div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">
+		    	<span>西药</span>
+		    	<div class="control_area">
+		    		<button class="add_btn">添加子类</button>
+		    		<button class="edit_btn">编辑</button>
+		    		<button class="del_btn">删除</button>
+		    	</div>
+		    </h2>
+		    <div class="layui-colla-content">
+			    <span>冲剂</span>
+			    <div class="control_area">
+			        <button class="edit_btn">编辑</button>
+			        <button class="del_btn">删除</button>
+		        </div>
+		    </div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">
+		    	<span>处方药</span>
+		    	<div class="control_area">
+		    		<button class="add_btn">添加子类</button>
+		    		<button class="edit_btn">编辑</button>
+		    		<button class="del_btn">删除</button>
+		    	</div>
+		    </h2>
+		    <div class="layui-colla-content">
+		      	<span>冲剂</span>
+			    <div class="control_area">
+			        <button class="edit_btn">编辑</button>
+			        <button class="del_btn">删除</button>
+		        </div>
+		    </div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">
+		    	<span>非处方药</span>
+		    	<div class="control_area">
+		    		<button class="add_btn">添加子类</button>
+		    		<button class="edit_btn">编辑</button>
+		    		<button class="del_btn">删除</button>
+		    	</div>
+		    </h2>
+		    <div class="layui-colla-content">
+		      	<span>冲剂</span>
+			    <div class="control_area">
+			        <button class="edit_btn">编辑</button>
+			        <button class="del_btn">删除</button>
+		        </div>
+		    </div>
+		  </div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="layui/layui.all.js" ></script>
+		<script>
+			layui.use('layer', function(){
+			  	const layer = layui.layer;
+			  	$(".add_btn").click(function(){
+				  	layer.open({
+					  	type: 1,
+					  	skin: 'alert_window', //样式类名
+					  	area: ['auto', 'auto'], //宽高
+					  	title: '添加分类',
+					  	content: '<div class="input_form">'
+					  				+'<form class="layui-form" action="">'
+										+'<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入分类名称" class="layui-input">'
+										+'<button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>'
+									+'</form>'
+								+'</div>',
+					});
+			  	})
+			  	$(".edit_btn").click(function(){
+			  		const index = $(".edit_btn").index($(this));
+				  	layer.open({
+					  	type: 1,
+					  	skin: 'alert_window', //样式类名
+					  	area: ['auto', 'auto'], //宽高
+					  	title: '编辑分类',
+					  	content: '<div class="input_form">'
+					  				+'<form class="layui-form" action="">'
+										+'<input type="text" name="title" lay-verify="title" value="'+$("span").eq(index).text()+'" autocomplete="off" placeholder="请输入分类名称" class="layui-input">'
+										+'<button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>'
+									+'</form>'
+								+'</div>',
+					});
+			  	})
+			});
+		</script>
+	</body>
+</html>

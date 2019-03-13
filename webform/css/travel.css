@@ -1,0 +1,200 @@
+@import url("common.css");
+.intro{
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/travel_bck.jpg);
+	background-size: 100%;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.intro_area{
+	text-align: center;
+}
+.intro_area h1{
+	color: #999999;
+	font-size: 48px;
+	font-family: algerian;
+}
+.intro_area button{
+	border: 0;
+	border-radius: 25px;
+	padding: 10px 40px;
+	margin: auto;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	transition: all 0.5s;
+	outline: none;
+}
+.intro_area button:hover{
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.city{
+	padding: 120px 0;
+	opacity: 0;
+}
+
+.city_title{
+	text-align: center;
+	font-size: 48px;
+	font-family: "arial rounded mt";
+}
+.city_title:first-letter{
+	color: #00BB99;
+}
+.city_choose{
+	width: 80%;
+	margin: 30px auto;
+	display: flex;
+}
+.choose_area{
+	width: 50%;
+	text-align: center;
+}
+.choose_area h1{
+	font-family: "agency fb";
+}
+.choose_city,.choose_country{
+	width: 30rem;
+	margin: auto;
+	border: 3px solid;
+    color: dimgray;
+    border-radius: 5px;
+	transition: all 0.5s;
+}
+.choose_city:hover{
+	color: #0077A2;
+}
+.choose_country:hover{
+	color: #4BA205;
+}
+.order_one{
+	font-size: 1.2rem;
+	background-color: rgba(0, 0, 0, 0.1);
+	height: 50px;
+	line-height: 50px;
+	margin: 0;
+}
+.choose_one{
+	font-size: 1.5rem;
+	padding: 15px 0;
+	margin: 0;
+	font-weight: bold;
+	font-family: 'cooper black';
+}
+.choose_one:after{
+	content: " ~";
+}
+.choose_one:before{
+	content: "~ ";
+}
+.city_sub{
+	margin: 70px 0;
+}
+.city_sub button{
+	border: 0;
+	padding: 15px 45px;
+	display: inherit;
+    margin: auto;
+	border-radius: 10px;
+	background-color: #3399CC;
+	color: #fff;
+	font-size: 16px;
+	outline: none;
+	transition: all 0.5s;
+}
+.city_sub button:hover{
+	background-color: #195F91;
+}
+.recommend{
+	background-color: #535353;
+	padding: 120px 0;
+}
+.recommend_title{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 48px;
+	font-family: "footlight mt light";
+	color: #fff;
+	opacity: 0;
+}
+.recommend_title span{
+	display: none;
+	color: #535353;
+}
+.recommend_area{
+	display: flex;
+	height: 480px;
+	padding: 50px 0; 
+	opacity: 0;
+}
+.order_recommend{
+	width: 25%;
+	height: 80px;
+	background-color: #00BFFF;
+	color: #fff;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+.order_recommend:hover{
+	margin-top: -20px;
+}
+.recommend_name{
+	text-align: center;
+	font-family: pristina;
+	margin: 0;
+	height: 80px;
+	line-height: 80px;
+	
+}
+.recommend_intro h3{
+    margin: 0 auto;
+    background-color: #00bfff;
+    position: relative;
+    width: fit-content;
+    margin-bottom: -10px;
+    padding: 0 10px;
+}
+.recommend_intro p{
+	width: 85%;
+    margin: 0 auto;
+    text-indent: 2em;
+    border: 2px solid #fff;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.ctrl_recommend{
+	width: fit-content;
+	margin: auto;
+	color: #fff;
+	opacity: 0;
+}
+.ctrl_recommend_btn_disabled{
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 25px;
+	outline: none;
+	margin: 0 10px;
+	font-weight: bold;
+	transition: all 0.5s;
+	background-color: #DDDDDD;
+}
+.ctrl_recommend_btn{
+	width: 40px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+}
+.ctrl_recommend_btn:hover{
+	width: 80px;
+	color: #242424;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.ctrl_recommend span{
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+}

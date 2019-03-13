@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="aaa"></p>
+		<table>
+			<tr>
+				<td rowspan="2">1.1</td>
+				<td colspan="2">2.1</td>
+				
+			</tr>
+			<tr>
+				
+				<td>2.2</td>
+				<td>3.2</td>
+			</tr>
+		</table>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				var endTime1  = new Date().getTime()-86400000;
+				$("#aaa").text(mescToDate(endTime1));
+			})
+			function mescToDate(mesc) {
+				const date = new Date(mesc);
+		        return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+		    };
+		</script>
+	</body>
+</html>

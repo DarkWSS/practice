@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<canvas id="my_can" height="300"></canvas>
+		<canvas id="sector" height="300"></canvas>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script>
+			$(document).ready(() => {
+				const can = $("#my_can")[0].getContext("2d");
+				can.fillStyle = "#008080";
+				can.fillRect(10,10,100,100);
+				can.moveTo(0, 0);
+				can.lineTo(110, 110);
+				can.stroke();
+				can.fillStyle = "#339933";
+				can.beginPath();
+				can.arc(110, 110, 50, 0, 2*Math.PI, true);
+				can.closePath();
+				can.fill();
+				can.stroke();
+				
+				const dataArr = [15, 25, 10, 30, 20];
+				const colorArr = ["#66ffcc", "#66ffff", "#66cc00", "#66cc33", "#66cc66", "#66cc99",	"#66cccc", "#66ccff"];
+				createSector(dataArr, colorArr, "#sector");
+			})
+			function createSector (dataArr, colorArr, el) {
+				const can = $(el)[0].getContext("2d");
+				let start = 0;
+				let end = 0;
+				for (var i = 0; i < dataArr.length; i++) {
+					can.beginPath();
+					can.moveTo(150, 150);
+					can.strokeStyle = "#fff";
+					end += dataArr[i]/50*Math.PI;
+					can.fillStyle = colorArr[i];
+					can.arc(150, 150, 150, start, end);
+					can.fill();
+					can.closePath();
+					can.stroke();
+                    can.font = "25px scans-serif";
+                    can.fillStyle = "#fff";
+                    can.fillText(dataArr[i]+"%", 40, 40);
+					start += dataArr[i]/50*Math.PI;
+				}
+			}
+		</script>
+	</body>
+</html>

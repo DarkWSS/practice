@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/about.css"/>
+	</head>
+	<body>
+		<div class="main">
+			<div class="about">
+				<div class="about_area">
+					<div class="about_area_img">
+						<img src="img/about.jpg" />
+					</div>
+					<div class="about_area_msg">
+						<p class="msg_info"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="js/anime.min.js" ></script>
+		<script>
+			const msg = 'We are committed to providing quality travel services to all people who want to see exotic landscapes.As of December 2018, we have provided 1945,682 people with the travel they want.Our service covers all countries and regions of five continents and four oceans. Whether it is prosperous cities, tranquil countryside, or cold ice fields, we can provide you with the tourism services you want.';
+			let msgIndex = 0;
+			const animation01 = anime({
+				targets: '.msg_info', 
+			  	duration: 10000,
+			  	loop: false,
+			  	delay: 1000,
+			  	easing: 'easeInOutSine',
+			  	run: function () {
+			  		if (msgIndex<msg.length+1){
+			  			$(".msg_info").text(msg.substring(0, msgIndex));
+			  			msgIndex++;
+			  		}
+			  	}
+			})
+			const animation02 = anime({
+				targets: '.about_area_img img',
+				opacity: [{value: 0, duration: 0}, {value: 1, delay: 1000, duration: 1000}],
+			  	duration: 1000,
+			  	loop: false,
+			  	easing: 'easeInOutSine',
+			})
+			const animation03 = anime({
+				targets: '.about',
+				width: [{value: 0, duration: 0}, {value: "100%", duration: 1000}],
+			  	duration: 1000,
+			  	loop: false,
+			  	easing: 'easeInOutSine',
+			})
+		</script>
+	</body>
+</html>

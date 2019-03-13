@@ -1,0 +1,98 @@
+@import url("common.css");
+html,body{
+	font-family: "微软雅黑";
+	background-image: url(../img/login_bck.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.main{
+	background-color: rgba(56, 56, 56, 0.2);
+}
+.login_area{
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	color: #fff;
+}
+.logo_img{
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.logo_img img{
+	width: 100%;
+	height: 100%;
+}
+.login_area input{
+	width: 360px;
+	height: 30px;
+	padding: 0 10px;
+	margin: 10px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-style: solid;
+	border-color: rgb(99, 99, 99);
+	border-radius: 25px;
+	outline: none;
+	color: rgb(99, 99, 99);
+	transition: border-color 1s;
+}
+.login_area input:hover{
+	border-color: rgba(255, 255, 255, 1);
+}
+.login_area input:focus{
+	border-color: rgba(0, 153, 51, 1);
+}
+.login_area button{
+	width: 50%;
+	height: 40px;
+	margin: 10px 25%;
+	border-radius: 50px;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	outline: none;
+	transition: all 1s;
+}
+.login_area button:hover{
+	background-color: rgba(255,255, 255, 0.7);
+	color: #000;
+}
+
+hr{
+	border: 0;
+	height: 3px;
+	background-color: #FFFFFF;
+}
+.hr_left{
+	transition: background-color 0.5s;
+	animation: hrLeft 1s;
+}
+.hr_left:hover{
+	background-color: #cc3300;
+}
+@keyframes hrLeft{
+	from{margin-left: 100%;}
+	to{margin-left: 0;}
+}
+
+.hr_right{
+	transition: background-color 0.5s;
+	animation: hrRight 1s;
+}
+.hr_right:hover{
+	background-color: #336600;
+}
+@keyframes hrRight{
+	from{margin-right: 100%;}
+	to{margin-right: 0;}
+}

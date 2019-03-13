@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="number" class="no_empty integer" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			/*jQuery(function(){
+				$('.no_empty').blur(function(){
+					if($(this).val().length>0){
+						$(this).val('no_empty');
+					}else{
+						$(this).val('');
+					}
+				})
+				$('.integer').blur(function(){
+					if($(this).val()>0){
+						$(this).val('integer');
+					}else{
+						$(this).val('');
+					}
+				})
+			})*/
+			$(document).ready(function(){
+				console.log(timeQuantumFormat("2018-01 ~ 2018-12"));
+				console.log(timeQuantumFormat("2018-01 ~ 2018-10"));
+			})
+			//清除字符串内所有空格
+			function removeSpace(str) {
+				const reg=/(^\s+)|(\s+$)|\s+/g;
+				return str.replace(reg,"");
+			}
+			function timeQuantumFormat(str) {
+				const timeArr = removeSpace(str).split("~");
+				const endTimeArr = timeArr[1].split("-");
+				endTimeArr[1] = parseInt(endTimeArr[1]) + 1;
+				if(endTimeArr[1]>12){
+					endTimeArr[0]++;
+					endTimeArr[1] = "01";
+				}else if(endTimeArr[1]<10){
+					endTimeArr[1] = "0"+endTimeArr[1];
+				}
+				return timeArr[0]+"~"+endTimeArr[0]+"-"+endTimeArr[1];
+			}
+		</script>
+	</body>
+</html>

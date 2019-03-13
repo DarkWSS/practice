@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/csslinegraph.css"/>
+		<style>
+			.linegraph{
+				height: 500px;
+				display: flex;
+				overflow: hidden;
+				position: relative;
+				border-bottom: 1px solid #000000;
+	        	border-left: 1px solid #000000;
+			}
+			.line{
+	        	width: 30px;
+	        	height: 500px;
+	        	position: absolute;
+	        	background-image: url(img/linegraph_bck.png);
+	        	background-size: 100%;
+	        }
+	        .real_line{
+	        	width: 1px;
+	        	height: 2000px;
+	        	border-left: 2px solid #DC322F;
+	        	transform-origin: 0 100%;
+	        }
+	        .point_show{
+	        	width: 6px;
+			    height: 6px;
+			    margin: -3px;
+	        	border-radius: 50%;
+	        	background-color: #DC322F;
+	        	position: absolute;
+	        	z-index: 100;
+	        }
+	        
+	        .rader_area{
+	        	width: 240px;
+	        	height: 240px;
+	        	text-align: center;
+	        	display: flex;
+	        	margin: auto;
+	        	position: relative;
+	        }
+	        .rader_line{
+	        	width: 1px;
+	        	height: 120px;
+	        	background-color: #00AAEE;
+	        	text-align: center;
+	        	transform-origin: bottom;
+	        	margin-left: 120px;
+	        	position: absolute;
+	        }
+	        
+	        .histogram_area{
+	        	width: -webkit-fit-content;
+	        	height: 300px;
+	        	margin: auto;
+	        	padding: 0 7.5px;
+	        	display: flex;
+	        	align-items: flex-end;
+	        	border-bottom: 1px solid #000000;
+	        	border-left: 1px solid #000000;
+	        }
+	        .histogram_col{
+	        	width: 45px;
+	        	margin: 0 7.5px;
+	        	background-color: #00BB99;
+	        	box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.3);
+	        }
+		</style>
+	</head>
+	<body>
+		<dl class="csslinegraph">
+		
+			<dt>Day 1</dt>
+			<dd class="first"><span class="pi0 i1"><em>3</em></span></dd>
+		
+			<dt>Day 2</dt>
+			<dd><span class="pi1 i10"><em>36</em></span></dd>
+		
+			<dt>Day 3</dt>
+			<dd><span class="pd11 d d4"><em>23</em></span></dd>
+		
+			<dt>Day 4</dt>
+			<dd><span class="pi7 i10"><em>56</em></span></dd>
+		
+			<dt>Day 5</dt>
+			<dd><span class="pd17 d d0"><em>55</em></span></dd>
+		
+			<dt>Day 6</dt>
+			<dd><span class="pd17 d d7"><em>32</em></span></dd>
+		
+			<dt>Day 7</dt>
+			<dd><span class="pi10 i14"><em>79</em></span></dd>
+		
+			<dt>Day 8</dt>
+			<dd><span class="pd24 d d2"><em>74</em></span></dd>
+		
+			<dt>Day 9</dt>
+			<dd><span class="pi22 i1"><em>77</em></span></dd>
+		
+			<dt>Day 10</dt>
+			<dd><span class="pi23 i2"><em>83</em></span></dd>
+		
+			<dt>Day 11</dt>
+			<dd><span class="pd25 d d15"><em>34</em></span></dd>
+		
+			<dt>Day 12</dt>
+			<dd><span class="pi10 i2"><em>39</em></span></dd>
+		
+		</dl>
+		
+		<div class="linegraph"></div>
+	    
+		<div class="rader_area">
+			<div class="rader_line"></div>
+			<div class="rader_line"></div>
+			<div class="rader_line"></div>
+			<div class="rader_line"></div>
+			<div class="rader_line"></div>
+			<div class="rader_line"></div>
+		</div>
+		
+		<div class="histogram_area"></div>
+		
+	    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	    <script>
+	    	$(document).ready(() => {
+	    		let pointArr = [{x: 0, y: 0},{x: 22, y: 22},{x: 35, y: 47},{x: 47, y:23},{x: 55, y: 47},{x: 59, y: 59},{x: 65, y: 77},{x: 69, y: 89},{x: 75, y: 67},{x: 79, y: 59}];
+	    		cerateLineGraph(pointArr, ".linegraph");
+	    		console.log(computingAngle(0, 0, 1, 1));
+	    		
+	    		createRaderMap();
+	    		
+	    		let data = [25, 37, 95, 75, 22, 56];
+	    		createHistogram(data);
+	    	})
+	    	//折线图
+	    	let computingAngle = (pointX, pointY, newPointX, newPointY) => {
+	    		const x = newPointX - pointX;
+	    		const y = newPointY - pointY;
+	    		let originalAngle = 360*Math.atan(x/y)/(2*Math.PI);
+	    		const angle = originalAngle < 0 ? 180 + originalAngle : originalAngle;
+	    		const top = 30/Math.tan(angle*Math.PI/180);
+	    		return {angle: angle, top: top};
+	    	}
+	    	let cerateLineGraph = (pointArr, elem) => {
+	    		let line = "";
+	    		let top = -1500;
+	    		$(elem).css("width", 30*(pointArr.length - 1));
+	    		for (let i = 1; i < pointArr.length; i++) {
+	    			let point = computingAngle(pointArr[i-1].x, pointArr[i-1].y, pointArr[i].x, pointArr[i].y);
+	    			line += `<div class="line" style="z-index: ${i}; margin-left: ${30*(i-1)}px">
+	    						<div class="real_line" style="transform: rotate(${point.angle}deg); margin-top: ${top}px"></div>
+	    						<div class="point_show"></div>
+	    					</div>`;
+	    			console.log(point);		
+	    			top -= point.top;		
+	    		}
+	    		$(elem).html(line);
+	    	}
+	    	//雷达图背景展开
+	    	let createRaderMap = (dataArr) => {
+ 				$.each($(".rader_line"), (i) => {
+ 					sectorAnime(i, i*360/$(".rader_line").length, 0);
+ 				});
+ 			}
+	    	//雷达图背景
+ 			let sectorAnime = (index, angle, rotate) => {
+ 				if(rotate <= angle){
+ 					setTimeout(() => {
+						$(".rader_line").eq(index).css("transform", "rotate(" + rotate + "deg)");
+						rotate++;
+						sectorAnime(index, angle, rotate);
+ 					},10)
+ 				} else {
+ 					$(".rader_line").eq(index).css("transform", "rotate(" + angle + "deg)");
+ 				}
+ 			}
+ 			//柱状图
+ 			let createHistogram = (data) => {
+ 				$.each(data, (i) => {
+ 					let height = data[i]*3;
+ 					createColumn(height);
+ 				});
+ 			}
+ 			let createColumn = (height) => {
+ 				$(".histogram_area").append(`<div class="histogram_col" ></div>`);//style="height: ${height}px"
+ 				$(".histogram_col:last-child").animate({"height": `${height}px`},"slow");
+ 			}
+	    </script>
+	</body>
+</html>
