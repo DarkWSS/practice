@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "BERNIER";
+  src: url("../font/BERNIER_ Distressed.woff") format("woff"),
+       url("../font/BERNIER_ Distressed.eot") format("embedded-opentype"),
+       url("../font/BERNIER_ Distressed.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlexaStd";
+  src: url("../font/AlexaStd.woff2") format("woff2"),
+       url("../font/AlexaStd.woff") format("woff"),
+       url("../font/AlexaStd.eot") format("embedded-opentype"),
+       url("../font/AlexaStd.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alien";
+  src: url("../font/Alien Encounters-solid.woff2") format("woff2"),
+       url("../font/Alien Encounters-solid.woff") format("woff"),
+       url("../font/Alien Encounters-solid.eot") format("embedded-opentype"),
+       url("../font/Alien Encounters-solid.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DatBox";
+  src: url("../font/DatBox.woff2") format("woff2"),
+       url("../font/DatBox.woff") format("woff"),
+       url("../font/DatBox.eot") format("embedded-opentype"),
+       url("../font/DatBox.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "scotsdi";
+  src: url("../font/scotsdi.woff2") format("woff2"),
+       url("../font/scotsdi.woff") format("woff"),
+       url("../font/scotsdi.eot") format("embedded-opentype"),
+       url("../font/scotsdi.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "geforce";
+  src: url("../font/geforce.woff2") format("woff2"),
+       url("../font/geforce.woff") format("woff"),
+       url("../font/geforce.eot") format("embedded-opentype"),
+       url("../font/geforce.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cafelatte";
+  src: url("../font/Cafelatte.woff2") format("woff2"),
+       url("../font/Cafelatte.woff") format("woff"),
+       url("../font/Cafelatte.eot") format("embedded-opentype"),
+       url("../font/Cafelatte.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "REP2CNI";
+  src: url("../font/REP2CNI_.woff2") format("woff2"),
+       url("../font/REP2CNI_.woff") format("woff"),
+       url("../font/REP2CNI_.eot") format("embedded-opentype"),
+       url("../font/REP2CNI_.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tandelle";
+  src: url("../font/Tandelle.woff2") format("woff2"),
+       url("../font/Tandelle.woff") format("woff"),
+       url("../font/Tandelle.eot") format("embedded-opentype"),
+       url("../font/Tandelle.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CgFuturaMaxiBd";
+  src: url("../font/CgFuturaMaxiBd.woff2") format("woff2"),
+       url("../font/CgFuturaMaxiBd.woff") format("woff"),
+       url("../font/CgFuturaMaxiBd.eot") format("embedded-opentype"),
+       url("../font/CgFuturaMaxiBd.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Michroma";
+  src: url("../font/Michroma.woff2") format("woff2"),
+       url("../font/Michroma.woff") format("woff"),
+       url("../font/Michroma.eot") format("embedded-opentype"),
+       url("../font/Michroma.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chicle-Regular";
+  src: url("../font/Chicle-Regular.woff2") format("woff2"),
+       url("../font/Chicle-Regular.woff") format("woff"),
+       url("../font/Chicle-Regular.eot") format("embedded-opentype"),
+       url("../font/Chicle-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
