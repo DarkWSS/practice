@@ -44,6 +44,9 @@ export default {
       this.hours = time.getHours().toString().padStart(2, '0')
       this.minute = time.getMinutes().toString().padStart(2, '0')
       this.second = time.getSeconds().toString().padStart(2, '0')
+    },
+    showTime () {
+      return this.year + '-' + this.month + '-' + this.day + ' ' + this.hours + ':' + this.minute + ':' + this.second
     }
   }
 }
@@ -60,17 +63,17 @@ export default {
       font-family: 'Tandelle';
       .year{
         color: cadetblue;
-      }
-      .year:after{
-        content: ".";
-        color: #a5a5a5;
+        &:after{
+          content: ".";
+          color: #a5a5a5;
+        }
       }
       .month{
         color: darkgreen;
-      }
-      .month:after{
-        content: ".";
-        color: #a5a5a5;
+        &:after{
+          content: ".";
+          color: #a5a5a5;
+        }
       }
       .day{
         color: brown;
@@ -86,19 +89,19 @@ export default {
       font-family: 'CollegiateBlackFLF';
       .hours{
         color: cadetblue;
-      }
-      .hours:after{
-        content: ":";
-        color: #a5a5a5;
-        margin: 0 1vw;
+        &:after{
+          content: ":";
+          color: #a5a5a5;
+          margin: 0 1vw;
+        }
       }
       .minute{
         color: darkgreen;
-      }
-      .minute:after{
-        content: ":";
-        color: #a5a5a5;
-        margin: 0 1vw;
+        &:after{
+          content: ":";
+          color: #a5a5a5;
+          margin: 0 1vw;
+        }
       }
       .second{
         color: brown;

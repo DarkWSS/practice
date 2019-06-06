@@ -29,6 +29,7 @@ exports.cssLoaders = function (options) {
     }
   }
 
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
@@ -78,7 +79,29 @@ exports.styleLoaders = function (options) {
       use: loader
     })
   }
-
+  output.push(
+    {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      include: /node_modules\/mand-mobile/
+    },
+    {
+      test: /\.styl$/,
+      use: [
+        'css-loader',
+        {
+          loader: 'stylus-loader',
+          options: {
+            import:['mand.mobile.my.styl']
+          }
+        }
+      ]
+    },
+    {
+      test: /\.(png|jpe?g|gif)(\?.*)?$/,
+      loader: 'url-loader',
+      include: /node_modules\/mand-mobile/
+    })
   return output
 }
 

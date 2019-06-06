@@ -8,10 +8,17 @@ import drag from '@/components/drag'
 import anime from '@/components/anime'
 import arborescence from '@/components/arborescence'
 import rain from '@/components/rain'
+import element from '@/components/elementui'
+import mint from '@/components/mint'
+import mand from '@/components/mand'
+import module from '@/components/module'
+import formFilter from '@/components/formFilter'
+import login from '@/components/login'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -52,6 +59,36 @@ export default new Router({
       path: '/rain',
       name: 'rain',
       component: rain
+    },
+    {
+      path: '/element',
+      name: 'elementui',
+      component: element
+    },
+    {
+      path: '/mint',
+      name: 'mint',
+      component: mint
+    },
+    {
+      path: '/mand',
+      name: 'mand',
+      component: mand
+    },
+    {
+      path: '/module',
+      name: 'module',
+      component: module
+    },
+    {
+      path: '/formFilter',
+      name: 'formFilter',
+      component: formFilter
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     }
   ]
 })

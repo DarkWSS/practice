@@ -136,6 +136,7 @@ export default {
   .main{
     .choose_year{
       display: flex;
+      font-size: .32rem;
       .icon{
         width: 10%;
         height: 8vh;
@@ -147,7 +148,6 @@ export default {
         text-align: center;
         height: 8vh;
         line-height: 8vh;
-        font-size: 1.2rem;
       }
     }
     .days_area{
@@ -158,6 +158,7 @@ export default {
         text-align: center;
         padding: 1vh 0;
         margin-top: 1vh;
+        font-size: .24rem;
         p{
           margin: 0;
           font-size: 6vw;

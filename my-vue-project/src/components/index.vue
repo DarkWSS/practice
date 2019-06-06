@@ -1,5 +1,6 @@
 <template>
-  <div class="main">
+  <div class="main" v-title data-title="我的组件">
+    <loading></loading>
     <div class="btn_area">
       <button v-for="(title, index) in btnArr" :key="index" :style="{backgroundColor: btnColor[index]}" @click="skipToPlug(index)">{{ title }}</button>
     </div>
@@ -11,14 +12,13 @@ export default {
   name: 'index',
   data () {
     return {
-      btnArr: ['滑动插件', '时间插件', '日期插件', '拖动插件', '定格动画', '树形图', '下雨天'],
+      btnArr: ['滑动插件', '时间插件', '日期插件', '拖动插件', '定格动画', '树形图', '下雨天', 'Element-UI', 'Mint-UI', 'Mand', 'Module', 'FormFilter', 'Login'],
       btnColor: []
     }
   },
   mounted () {
     for (let i = 0; i < this.btnArr.length; i++) {
       this.btnColor.push(this.randomColor())
-      console.log(this.randomColor())
     }
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
       return `rgb(${parseInt(Math.random() * 255)} , ${parseInt(Math.random() * 255)}, ${parseInt(Math.random() * 255)})`
     },
     skipToPlug (index) {
-      const urlArr = ['slide', 'clock', 'calendar', 'drag', 'anime', 'arborescence', 'rain']
+      const urlArr = ['slide', 'clock', 'calendar', 'drag', 'anime', 'arborescence', 'rain', 'element', 'mint', 'mand', 'module', 'formFilter', 'login']
       this.$router.push({path: urlArr[index]})
     }
   }
