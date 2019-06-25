@@ -1,0 +1,72 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F8F8FF;
+    font-size: .18rem;
+    color: #F7F7F7;
+    background-image: url(../img/bg.svg);
+    background-size: cover;
+    background-position: center;
+}
+.vite-title{
+    font-size: .26rem;
+    font-weight: bold;
+    font-family: "黑体";
+    text-align: center;
+    height: .6rem;
+    line-height: .9rem;
+}
+.vite-part{
+    width: 768px;
+    margin: .5rem auto;
+	position: relative;
+    .info-area{
+        border: .02rem solid #ccc;
+        padding: .2rem;
+        h4{
+            width: -webkit-fit-content;
+            padding: .05rem .1rem;
+            background-color: #BBBBBB;
+            margin-top: -.4rem;
+            font-size: .22rem;
+			position: absolute;
+			border-radius: .05rem;
+			font-weight: bold;
+        }
+        .col-sm-4{
+            font-weight: bold;
+        }
+        .company{
+            margin-top: .2rem;
+            margin-bottom: .2rem;
+            .name{
+                font-size: .20rem;
+                font-weight: 600;
+            }
+            .time{
+                color: #C0C0C0;
+                font-size: .12rem;
+                text-align: right;
+            }
+            .title{
+                margin-top: .1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .vite-part{
+        width: 90%;
+        .info-area{
+            .company{
+                .time{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
